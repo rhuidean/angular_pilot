@@ -14,8 +14,38 @@ export class AppComponent {
   mystr: string="WOW";
   myBoolean= true;
   myArray = [1,2,3,4,5];
-  user ={
-  	firstName:'Darth',
-  	lastName: 'Vader',
+  // cannot have two values with attributes
+  // user ={
+  // 	firstName:'Darth',
+  // 	lastName: 'Vader',
+  // };
+
+  num: number =1;
+  logNum(){
+  	console.log('num is:', this.num);
+  };
+
+  increaseNum(){
+  	this.num++
+  	console.log(this.num);
+  };
+
+  users=[];
+  user= {
+  	firstName: '',
+  	lastName: ''
+  };
+
+  onSubmit(){
+  	console.log("onSubmit()");
+  	console.log(this.user);
+
+  	this.user = {
+  		firstName:'',
+  		lastName:''
+  	}
+
+
   }
+
 }
