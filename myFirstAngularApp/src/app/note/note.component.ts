@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note.component.css']
 })
 export class NoteComponent implements OnInit {
+	notes = [
+		{title: 'first note'},
+		{title: 'second note'}
+	];
 
-  constructor() { }
+	invoked(){
+		console.log("Invoked");
+	}
 
-  ngOnInit() {
-  }
+	constructor() { 
+
+	}
+
+
+
+	ngOnInit() {
+	}
 
 }

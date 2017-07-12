@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-note-list',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note-list.component.css']
 })
 export class NoteListComponent implements OnInit {
+	@Input() myNotes;
+	@Output() myEvent = new EventEmitter();
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
+
+		// invoke 
+	callParent() {
+		this.myEvent.emit();
+	}
 
 }

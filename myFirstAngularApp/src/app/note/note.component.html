@@ -1,4 +1,13 @@
 <p>
   note works!
 </p>
-<app-note-list></app-note-list>
+
+
+<h3>Note Component</h3>
+{{ notes|json}}
+
+<!-- Give a property, binding myNotes attribute variable notes -->
+<app-note-list [myNotes]="notes" (myEvent)="invoke()"></app-note-list>
+
+
+
