@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpService } from './http.service';
+
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,7 @@ export class AppComponent {
   mystr: string="WOW";
   myBoolean= true;
   myArray = [1,2,3,4,5];
+  tasks=[];
   // cannot have two values with attributes
   // user ={
   // 	firstName:'Darth',
@@ -44,8 +47,14 @@ export class AppComponent {
   		firstName:'',
   		lastName:''
   	}
+   }
+  constructor(private _httpService: HttpService){}
 
-
+  getTasks(){
+    this._httpService.retrieveTasks()
+    .then( task=>{ this.tasks=tasks })
+    .catch(err=>{console.log(err); })
   }
+
 
 }
